@@ -7,7 +7,7 @@
 //
 
 struct Shape: Identifiable {
-    let name: String
+    var name: String
     let iconName: String
 
     var id: String {

@@ -13,7 +13,7 @@ struct ShapesListView: View {
 
     let layoutGroup: LayoutGroup
 
-    let shapes: [Shape] = [
+    @State var shapes: [Shape] = [
         .init(name: "Hexagon", iconName: "hexagon.fill"),
         .init(name: "Rectangle", iconName: "rectangle.fill"),
         .init(name: "Shield", iconName: "shield.fill"),
@@ -45,6 +45,16 @@ struct ShapesListView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top, 19)
+            
+            Button {
+                if shapes[2].name == "Shield" {
+                    shapes[2].name = "Shield2"
+                } else {
+                    shapes[2].name = "Shield"
+                }
+            } label: {
+                Text("ChangeState").background(Color.black)
+            }
 
             ScrollView {
                 switch layoutGroup {
